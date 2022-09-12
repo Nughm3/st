@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+
 static char *font = "JetBrainsMono Nerd Font:pixelsize=14:antialias=true:autohint=true";
-// static char *font = "Iosevka Nerd Font:pixelsize=14:antialias=true:autohint=true";
-static int borderpx = 0;
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -17,11 +17,11 @@ static int borderpx = 0;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/usr/bin/fish";
+static char *shell = "/usr/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
-char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
+char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400 sane";
 
 /* identification sequence returned in DA and DECID */
 char *vtiden = "\033[?6c";
@@ -293,7 +293,7 @@ static Key key[] = {
 	{ XK_KP_Delete,     ControlMask,    "\033[3;5~",    +1,    0},
 	{ XK_KP_Delete,     ShiftMask,      "\033[2K",      -1,    0},
 	{ XK_KP_Delete,     ShiftMask,      "\033[3;2~",    +1,    0},
-	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",       -1,    0},
+	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",      -1,    0},
 	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",      +1,    0},
 	{ XK_KP_Multiply,   XK_ANY_MOD,     "\033Oj",       +2,    0},
 	{ XK_KP_Add,        XK_ANY_MOD,     "\033Ok",       +2,    0},
